@@ -4,10 +4,10 @@ import json, uuid, os
 from google.cloud import dialogflow_v2 as dialogflow
 from django.shortcuts import render
 
-GOOGLE_CREDENTIALS_PATH = r"C:\Users\vaish\Downloads\abc-chatbot-isyw-badb4206698f.json"
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = GOOGLE_CREDENTIALS_PATH
+# GOOGLE_CREDENTIALS_PATH = r"C:\Users\vaish\Downloads\abc-chatbot-isyw-badb4206698f.json"
+# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = GOOGLE_CREDENTIALS_PATH
 
-PROJECT_ID = "abc-chatbot-isyw"
+PROJECT_ID = os.environ.get("abc-chatbot-isyw")
 
 @csrf_exempt
 def chatbot(request):
